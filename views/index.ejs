@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+	<div class="container">
+		<div class="data">
+			<% data.forEach(function(el) { %>
+			<h3><a href="/edit/<%= el._id %>"><%= el.name %></a></h3>
+			<% }); %>
+		</div>
+		<form action="/add" method="post">
+			<input type="text" name="name" required>
+			<input type="email" name="email" required>
+			<button type="submit" class="btn btn-primary btn-lg">submit</button>
+		</form>
+	</div>
+  </body>
+</html>

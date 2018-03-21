@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+	<div class="container">
+		<div class="data">
+			
+		</div>
+		<form action="/edit/<%= data._id %>" method="post">
+			<input type="text" name="name" value="<%= data.name %>" required>
+			<input type="email" name="email" value="<%= data.email %>" required>
+			<button type="submit" class="btn btn-primary btn-lg">submit</button>
+		</form>
+		<a href="/delete/<%= data._id %>" class="btn btn-danger btn-lg">delete</a>
+	</div>
+  </body>
+</html>
