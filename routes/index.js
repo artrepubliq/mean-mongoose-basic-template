@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
 /* count home page. */
 router.get('/count', function(req, res, next) {
-	Category.countC({email: 'himakarreddy@hotmail.com', name: 'raja'},function(err, categories){
+	Category.count({email: 'himakarreddy@hotmail.com', name: 'raja'},function(err, categories){
 		if (err) { res.send(err);}
 		console.log(categories);
 		res.json(categories);
